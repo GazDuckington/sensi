@@ -9,7 +9,7 @@ Belum ada setup.py, install secara manual.
 1. copy isi repository kedalam directory proyek anda
 1. gunakan fungsi-fungsi yang diinginkan dengan meng-impor fungsi-2 tsb.
 
-## Contoh
+## Penggunaan
 - Contoh penerapan dapat dilihat pada directory 'apis' pada repository [flask-sk](https://github.com/GazDuckington/flask-sk)
 
 - Contoh sederhana:
