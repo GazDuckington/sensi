@@ -23,4 +23,4 @@ Belum ada setup.py, install secara manual.
   
   print(predict_nbc(text, logprior, loglikelihood))
   ```
-baca ```**resources/predictor.py**``` untuk berbagai contoh lainnya.
+baca ```resources/predictor.py``` untuk berbagai contoh lainnya.
