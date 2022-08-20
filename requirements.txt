@@ -1,0 +1,5 @@
+sastrawi
+nltk
+numpy
+pandas
+sqlalchemy
