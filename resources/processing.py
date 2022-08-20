@@ -8,10 +8,9 @@ from nltk.tokenize import word_tokenize
 
 from ..database.query import readStopWords
 
-pwd = os.getcwd()
-nltk_path = pwd + "/NLTK_DATA"
+pwd = os.path.dirname(os.path.realpath(__file__))
+nltk_path = pwd + "/nltk_data"
 nltk.data.path.append(nltk_path)
-nltk.download('punkt')
 
 
 def rem_stop(txt: str) -> List:
