@@ -1,3 +1,4 @@
+import os
 import re
 from typing import List
 
@@ -5,9 +6,12 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import nltk
 from nltk.tokenize import word_tokenize
 
-from database.query import readStopWords
+from ..database.query import readStopWords
 
-nltk.data.path.append("NLTK_DATA")
+pwd = os.getcwd()
+nltk_path = pwd + "/NLTK_DATA"
+nltk.data.path.append(nltk_path)
+nltk.download('punkt')
 
 
 def rem_stop(txt: str) -> List:
