@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 BASE_DIR = os.path.dirname(os.path.realpath(__file__))
 conn = "sqlite:///" + os.path.join(BASE_DIR, "dataset.db") + "?check_same_thread=False"
-engine = create_engine(conn, echo=True)
+engine = create_engine(conn)
 Base = declarative_base()
 session = sessionmaker()
 
