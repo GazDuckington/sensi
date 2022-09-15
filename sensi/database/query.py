@@ -40,7 +40,7 @@ def read_stop_words() -> set:
 def read_all_training() -> dict:
     """Read all training dataset"""
     local_session = session(bind=engine)
-    training = local_session.query(Training).yield_per(5).all()
+    training = local_session.query(Training).all()
 
     return {data.id: {"text": data.text, "label": data.label} for data in training}
 
