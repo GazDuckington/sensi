@@ -1,7 +1,7 @@
 <div align="center">Sensi, analisis sentimen bahasa Indonesia menggunakan klasifikasi Naive-Bayes.</div>
 
 # Instalasai
-Belum ada setup.py, install secara manual.
+
 1. _Install_ paket
 ```bash
 pip install sensi
