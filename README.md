@@ -1,17 +1,10 @@
-<div align=center><b>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</b></div>
-
-# Dependensi
-- sastrawi 
-- nltk
-- numpy
-- pandas
-- sqlalchemy
+<div align="center">Sensi, analisis sentimen bahasa Indonesia menggunakan klasifikasi Naive-Bayes.</div>
 
 # Instalasai
 Belum ada setup.py, install secara manual.
-1. _copy/clone_ _repository_ kedalam directory proyek anda
+1. _Install_ paket
 ```bash
-git clone https://github.com/GazDuckington/nbc-sentimen.git
+pip install sensi
 ```
 1. Ikuti contoh-contoh penggunaan.
 
@@ -20,8 +13,8 @@ git clone https://github.com/GazDuckington/nbc-sentimen.git
 
 - Contoh sederhana:
   ```python
-  from database.query import readLoglikelihood, readLogprior
-  from resources.sentiment import predict_nbc
+  from sensi.database.query import readLoglikelihood, readLogprior
+  from sensi.resources.sentiment import predict_nbc
   
   logprior = readLogprior()
   loglikelihood = readLoglikelihood()
@@ -29,6 +22,7 @@ git clone https://github.com/GazDuckington/nbc-sentimen.git
   
   print(predict_nbc(text, logprior, loglikelihood))
   ```
+  
 - Baca ```resources/predictor.py``` untuk berbagai contoh lainnya.
 
 # LICENSE
