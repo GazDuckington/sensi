@@ -2,7 +2,10 @@
 name = "sensi"
 version = "0.1.0"
 description = "analisis sentimen bahasa Indonesia menggunakan Naive-Bayes"
-authors = ["Ghazy <32423204+GazDuckington@users.noreply.github.com>"]
+authors = ["GazDuckington dianghazy@protonmail.com>"]
+readme = "README.md"
+license = "MIT"
+repository= "https://github.com/GazDuckington/nbc-sentimen"
 
 [tool.poetry.dependencies]
 python = "^3.10"
