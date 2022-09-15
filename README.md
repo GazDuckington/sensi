@@ -6,7 +6,7 @@ Belum ada setup.py, install secara manual.
 ```bash
 pip install sensi
 ```
-1. Ikuti contoh-contoh penggunaan.
+2. Ikuti contoh-contoh penggunaan.
 
 # Penggunaan
 - Contoh penerapan dapat dilihat pada directory 'apis' pada repository [flask-sk](https://github.com/GazDuckington/flask-sk)
