@@ -27,7 +27,7 @@ def kamus_freq(teks: List[str], label: List[int]) -> dict:
     return result
 
 # ** hitung likelihood
-def hitungLikelihood(freqs: dict) -> dict:
+def hitung_likelihood(freqs: dict) -> dict:
     """melatih naive-bayes classifier
     Args:
         freqs ([dict]): [kamus frekuensi kata data training]
@@ -54,7 +54,7 @@ def hitungLikelihood(freqs: dict) -> dict:
     return loglikelihood
 
 # ** hitung prior
-def hitungPrior(freqs: dict, train_y) -> float:
+def hitung_prior(freqs: dict, train_y) -> float:
     """melatih naive-bayes classifier
     Args:
         freqs ([dict]): [kamus frekuensi kata data training]

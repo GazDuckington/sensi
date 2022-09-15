@@ -14,12 +14,12 @@ from .models import (
 )
 
 
-def createDb() -> None:
+def create_db() -> None:
     """Create Database dataset.db"""
     Base.metadata.create_all(engine)
 
 
-def insertTraining(txt: str, lbl: int) -> None:
+def insert_training(txt: str, lbl: int) -> None:
     """Insert text and label into training table"""
     local_session = session(bind=engine)
     new_training = Training(text=txt, label=lbl)
@@ -28,7 +28,7 @@ def insertTraining(txt: str, lbl: int) -> None:
 
 
 @cache
-def readStopWords() -> set:
+def read_stop_words() -> set:
     """Read all stop words"""
     local_session = session(bind=engine)
     stops = local_session.query(StopWords).all()
@@ -37,7 +37,7 @@ def readStopWords() -> set:
 
 
 @cache
-def readAllTraining() -> dict:
+def read_all_training() -> dict:
     """Read all training dataset"""
     local_session = session(bind=engine)
     training = local_session.query(Training).yield_per(5).all()
@@ -46,7 +46,7 @@ def readAllTraining() -> dict:
 
 
 @cache
-def readLoglikelihood() -> dict:
+def read_log_likelihood() -> dict:
     """Read all loglikelihoods. Returns dictionary."""
     local_session = session(bind=engine)
     loglikelihood = local_session.query(Likelihood).all()
@@ -55,7 +55,7 @@ def readLoglikelihood() -> dict:
 
 
 @cache
-def readLogprior() -> Any:
+def read_log_prior() -> Any:
     """Read all logprior. Returns dictionary."""
     local_session = session(bind=engine)
     prior = local_session.query(Prior).order_by(desc(Prior.id)).first()

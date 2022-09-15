@@ -2,7 +2,7 @@ from typing import List
 
 from nltk.tokenize import sent_tokenize
 
-from ..database.query import readLoglikelihood, readLogprior
+from ..database.query import read_log_likelihood, read_log_prior
 from .processing import freqs, normalisasi
 from .sentiment import predict_nbc
 
@@ -12,18 +12,18 @@ loglikelihood = readLoglikelihood()
 tr = 0
 
 
-def predTotal(text: str) -> float:
+def pred_total(text: str) -> float:
     x = predict_nbc(text, logprior, loglikelihood)
     return round(x, 4)
 
 
-def Convert(tup: tuple, di: dict) -> dict:
+def convert(tup: tuple, di: dict) -> dict:
     for i, (a, b) in enumerate(tup):
         di[i] = {"text": a, "freq": b}
     return di
 
 
-def perKalimat(text: str) -> list:
+def per_kalimat(text: str) -> list:
     kalimat = []
     x = sent_tokenize(text)
 
@@ -36,14 +36,14 @@ def perKalimat(text: str) -> list:
                 "kalimat": x[i],
                 "skor": round(sk, 4),
                 "label": lb,
-                "perkata": perKata(x[i]),
+                "perkata": per_kata(x[i]),
             }
         )
 
     return kalimat
 
 
-def perKata(text: str) -> List[str]:
+def per_kata(text: str) -> List[str]:
     temp_norm = normalisasi(text)
     frekwensi = freqs(temp_norm)    # type: ignore
 

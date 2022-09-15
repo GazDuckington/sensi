@@ -16,11 +16,11 @@ Belum ada setup.py, install secara manual.
 
 - Contoh sederhana:
   ```python
-  from database.query import readLoglikelihood, readLogprior
+  from database.query import read_log_likelihood, read_log_prior
   from resources.sentiment import predict_nbc
   
-  logprior = readLogprior()
-  loglikelihood = readLoglikelihood()
+  logprior = read_log_prior()
+  loglikelihood = read_log_likelihood()
   text = "contoh text yang ingin di analisis."
   
   print(predict_nbc(text, logprior, loglikelihood))

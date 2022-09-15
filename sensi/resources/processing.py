@@ -6,7 +6,7 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import nltk
 from nltk.tokenize import word_tokenize
 
-from ..database.query import readStopWords
+from ..database.query import read_stop_words
 
 pwd = os.path.dirname(os.path.realpath(__file__))
 nltk_path = pwd + "/nltk_data"
@@ -16,7 +16,7 @@ nltk.data.path.append(nltk_path)
 def rem_stop(txt: str) -> List:
     """Remove stop words"""
     # return list(readStopWords())
-    return [t for t in txt if t not in list(readStopWords())]
+    return [t for t in txt if t not in list(read_stop_words())]
 
 
 def normalisasi(txt: str) -> List[str]:
