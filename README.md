@@ -1,15 +1,19 @@
 <p align=center>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</p>
 
 ## Dependensi
-
-```python
-sastrawi nltk numpy pandas sqlalchemy
-```
+- sastrawi 
+- nltk
+- numpy
+- pandas
+- sqlalchemy
 
 ## Instalasai
 Belum ada setup.py, install secara manual.
-1. copy isi repository kedalam directory proyek anda
-1. gunakan fungsi-fungsi yang diinginkan dengan meng-impor fungsi-2 tsb.
+1. _copy/clone_ _repository_ kedalam directory proyek anda
+```shell
+git clone https://github.com/GazDuckington/nbc-sentimen.git
+```
+1. Ikuti contoh-contoh penggunaan.
 
 ## Penggunaan
 - Contoh penerapan dapat dilihat pada directory 'apis' pada repository [flask-sk](https://github.com/GazDuckington/flask-sk)
