@@ -1,3 +1,4 @@
+import os
 import re
 from typing import List
 
@@ -5,9 +6,11 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import nltk
 from nltk.tokenize import word_tokenize
 
-from database.query import readStopWords
+from ..database.query import readStopWords
 
-nltk.data.path.append("NLTK_DATA")
+pwd = os.path.dirname(os.path.realpath(__file__))
+nltk_path = pwd + "/nltk_data"
+nltk.data.path.append(nltk_path)
 
 
 def rem_stop(txt: str) -> List:
@@ -23,11 +26,11 @@ def normalisasi(txt: str) -> List[str]:
     stemmer = factory.create_stemmer()
     txt = stemmer.stem(txt)
     # * remove urls
-    txt = re.sub(r"http\S+", "", txt)
+    txt = re.sub(r"http\S+", " ", txt)
     # * remove punctuations
-    txt = re.sub(r"[^\w\s]", "", txt)
+    txt = re.sub(r"[^\w\s]", " ", txt)
     # * remove numbers
-    txt = re.sub(r"\d+", "", txt)
+    txt = re.sub(r"\d+", " ", txt)
     # * tokenize string
     txt = word_tokenize(txt)  # type: ignore
     # * remove stop words, return normalized strings in a list

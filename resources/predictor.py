@@ -2,9 +2,9 @@ from typing import List
 
 from nltk.tokenize import sent_tokenize
 
-from database.query import readLoglikelihood, readLogprior
-from resources.processing import freqs, normalisasi
-from resources.sentiment import predict_nbc
+from ..database.query import readLoglikelihood, readLogprior
+from .processing import freqs, normalisasi
+from .sentiment import predict_nbc
 
 logprior = readLogprior()
 loglikelihood = readLoglikelihood()
