@@ -1,4 +1,4 @@
-<b align=center>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</b>
+<div align=center><b>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</b></div>
 
 # Dependensi
 - sastrawi 
