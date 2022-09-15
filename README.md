@@ -10,7 +10,7 @@
 # Instalasai
 Belum ada setup.py, install secara manual.
 1. _copy/clone_ _repository_ kedalam directory proyek anda
-```shell
+```bash
 git clone https://github.com/GazDuckington/nbc-sentimen.git
 ```
 1. Ikuti contoh-contoh penggunaan.
