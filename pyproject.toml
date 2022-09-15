@@ -19,6 +19,9 @@ SQLAlchemy = "^1.4.40"
 pytest = "^5.2"
 black = "^22.6.0"
 
+[tool.poetry.scripts]
+sensi = 'sensi:main'
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
