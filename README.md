@@ -1,4 +1,4 @@
-<h3 align=center>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</h3>
+<b align=center>Framework analisis sentiment teks Bahasa Indonesia, menggunakan Klasifikasi Naive-Bayes</b>
 
 # Dependensi
 - sastrawi 
@@ -29,7 +29,7 @@ git clone https://github.com/GazDuckington/nbc-sentimen.git
   
   print(predict_nbc(text, logprior, loglikelihood))
   ```
-baca ```resources/predictor.py``` untuk berbagai contoh lainnya.
+- Baca ```resources/predictor.py``` untuk berbagai contoh lainnya.
 
 # LICENSE
 [MIT](LICENSE)
