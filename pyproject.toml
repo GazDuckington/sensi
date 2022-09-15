@@ -1,8 +1,13 @@
 [tool.poetry]
-name = "nbc-sentimen"
-version = "0.1.0"
-description = ""
-authors = ["Ghazy <32423204+GazDuckington@users.noreply.github.com>"]
+name = "sensi"
+version = "0.1.4"
+description = "analisis sentimen bahasa Indonesia menggunakan Naive-Bayes"
+authors = ["GazDuckington <dianghazy@protonmail.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/GazDuckington/nbc-sentimen"
+repository= "https://github.com/GazDuckington/nbc-sentimen"
+packages = [{include = "sensi"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,6 +19,7 @@ SQLAlchemy = "^1.4.40"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = "^22.6.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
