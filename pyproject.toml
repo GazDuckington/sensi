@@ -2,7 +2,7 @@
 name = "sensi"
 version = "0.1.0"
 description = "analisis sentimen bahasa Indonesia menggunakan Naive-Bayes"
-authors = ["GazDuckington dianghazy@protonmail.com>"]
+authors = ["GazDuckington <dianghazy@protonmail.com>"]
 readme = "README.md"
 license = "MIT"
 repository= "https://github.com/GazDuckington/nbc-sentimen"
