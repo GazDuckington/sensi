@@ -13,7 +13,7 @@ nltk_path = f"{pwd}/nltk_data"
 nltk.data.path.append(nltk_path)
 
 
-def rem_stop(txt: str) -> List:
+def rem_stop(txt) -> list:
     """Remove stop words"""
     # return list(readStopWords())
     return [t for t in txt if t not in list(read_stop_words())]

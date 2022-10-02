@@ -1,5 +1,3 @@
-from typing import List
-
 from nltk.tokenize import sent_tokenize
 
 from ..database.query import read_log_likelihood, read_log_prior
@@ -42,7 +40,7 @@ def per_kalimat(text: str) -> list:
     return kalimat
 
 
-def per_kata(text: str) -> List[str]:
+def per_kata(text: str) -> list:
     temp_norm = normalisasi(text)
     frekwensi = freqs(temp_norm)    # type: ignore
 
