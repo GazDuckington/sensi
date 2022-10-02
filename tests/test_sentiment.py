@@ -1,5 +1,5 @@
 import pandas as pd
-from sensi import hitung_likelihood, hitung_prior, kamus_freq, predict_nbc, uji_akurasi, read_log_prior, read_log_likelihood 
+from sensi import hitung_likelihood, hitung_prior, kamus_freq, predict_nbc, uji_akurasi 
 
 data_unit_test = [['text1', 0], ['text2', 0], ['text3', 1]]
 df_unit_test = pd.DataFrame(data_unit_test, columns=['text', 'label'])
