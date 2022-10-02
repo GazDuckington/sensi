@@ -102,7 +102,7 @@ def predict_nbc(text: str, logprior: float, loglikelihood: dict) -> float:
     return p
 
 # ** test nbc
-def test_nbc(test_x: List[str], test_y: List[int], logprior: float, loglikelihood: dict) -> str:
+def uji_akurasi(test_x: List[str], test_y: List[int], logprior: float, loglikelihood: dict) -> str:
     """menguji naivve-bayes classifier
     Input:
         test_x: list kata
