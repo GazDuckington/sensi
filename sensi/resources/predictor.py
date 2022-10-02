@@ -6,18 +6,17 @@ from ..database.query import read_log_likelihood, read_log_prior
 from .processing import freqs, normalisasi
 from .sentiment import predict_nbc
 
-logprior = readLogprior()
-loglikelihood = readLoglikelihood()
+logprior = read_log_prior()
+loglikelihood = read_log_likelihood()
 
 tr = 0
 
-
-def pred_total(text: str) -> float:
+def prediksi_nbc(text: str) -> float:
     x = predict_nbc(text, logprior, loglikelihood)
     return round(x, 4)
 
 
-def convert(tup: tuple, di: dict) -> dict:
+def tup_to_dict(tup: tuple, di: dict) -> dict:
     for i, (a, b) in enumerate(tup):
         di[i] = {"text": a, "freq": b}
     return di
@@ -49,7 +48,7 @@ def per_kata(text: str) -> List[str]:
 
     kata = []
     dicti = {}
-    kamus_freq = Convert(frekwensi, dicti)   # type: ignore
+    kamus_freq = tup_to_dict(frekwensi, dicti)   # type: ignore
 
     for _, y in kamus_freq.items():
         sk = predict_nbc(y["text"], logprior, loglikelihood)

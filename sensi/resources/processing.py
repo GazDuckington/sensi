@@ -9,7 +9,7 @@ from nltk.tokenize import word_tokenize
 from ..database.query import read_stop_words
 
 pwd = os.path.dirname(os.path.realpath(__file__))
-nltk_path = pwd + "/nltk_data"
+nltk_path = f"{pwd}/nltk_data"
 nltk.data.path.append(nltk_path)
 
 
