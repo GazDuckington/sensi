@@ -1,7 +1,4 @@
 from functools import cache
-from typing import Any
-
-from sqlalchemy import desc
 
 from .models import (
     Base,
@@ -55,9 +52,9 @@ def read_log_likelihood() -> dict:
 
 
 @cache
-def read_log_prior() -> Any:
+def read_log_prior() -> None:
     """Read all logprior. Returns dictionary."""
     local_session = session(bind=engine)
-    prior = local_session.query(Prior).order_by(desc(Prior.id)).first()
+    prior = local_session.query(Prior).order_by(Prior.id.desc()).first()
 
-    return prior.logprior  # type: ignore
+    return prior.logprior #type:ignore
