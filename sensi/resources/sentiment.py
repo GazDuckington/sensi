@@ -87,7 +87,7 @@ def predict_nbc(text: str, logprior: float, loglikelihood: dict) -> float:
     """prediktor naive-bayes
     Args:
         text ([string]): [kalimat yang ingin diketahui sentimennya]
-        logprior ([integer]): [probabilitas prior]
+        logprior ([float]): [probabilitas prior]
         loglikelihood ([dict]): [probabilitas likelihood]
 
     Returns:
