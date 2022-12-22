@@ -1,4 +1,5 @@
 from functools import cache
+from typing import Any
 
 from .models import (
     Base,
@@ -52,9 +53,9 @@ def read_log_likelihood() -> dict:
 
 
 @cache
-def read_log_prior() -> None:
+def read_log_prior() -> Any:
     """Read all logprior. Returns dictionary."""
     local_session = session(bind=engine)
     prior = local_session.query(Prior).order_by(Prior.id.desc()).first()
 
-    return prior.logprior #type:ignore
+    return prior.logprior # type: ignore
