@@ -1,0 +1,29 @@
+name: CI
+on: [pull_request, push]
+
+jobs:
+  ci:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11"]
+        poetry-version: ["1.0", "1.1.15"]
+        os: [alpine-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run image
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: ${{ matrix.poetry-version }}
+      - name: Config poetry
+        run: poetry config http-basic.pypi '__token__' ${{ secrets.PYPI_API_TOKEN }}
+      - name: Format code
+        run: poetry run black
+      - name: Run tests
+        run: poetry run pytest
+      - name: Publish
+        run: poetry publish
