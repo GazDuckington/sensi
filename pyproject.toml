@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sensi"
-version = "1.0.0"
+version = "1.0.1"
 description = "analisis sentimen bahasa Indonesia menggunakan Naive-Bayes"
 authors = ["GazDuckington <dianghazy@protonmail.com>"]
 readme = "README.md"
@@ -15,7 +15,7 @@ nltk = "^3.8"
 Sastrawi = "^1.0.1"
 numpy = "^1.24.1"
 pandas = "^1.5.2"
-SQLAlchemy = {extras = ["asyncio"], version = "^1.4.45"}
+SQLAlchemy = { extras = ["asyncio"], version = "^1.4.45" }
 aiosqlite = "^0.18.0"
 
 [tool.poetry.group.dev.dependencies]
