@@ -18,7 +18,6 @@ python-dateutil==2.8.2
 pytz==2022.7
 regex==2022.10.31
 Sastrawi==1.0.1
--e git+ssh://git@github.com/GazDuckington/sensi.git@4d75ad06d70dfe43bcd0bd02759c4b7eb4a6075b#egg=sensi
 six==1.16.0
 SQLAlchemy==1.4.45
 tqdm==4.64.1
