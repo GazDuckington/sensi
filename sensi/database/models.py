@@ -1,15 +1,6 @@
-import os
-
-from sqlalchemy import Column, Float, Integer, String, create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
-
-BASE_DIR = os.path.dirname(os.path.realpath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "dataset.db")
-DB_URL = f"sqlite:///{DB_PATH}?check_same_thread=False"
-engine = create_engine(DB_URL)
+from sqlalchemy import Column, Float, Integer, String
+from sqlalchemy.orm import declarative_base
 Base = declarative_base()
-session = sessionmaker()
-
 
 class Training(Base):
     """Training Dataset"""

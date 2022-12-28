@@ -1,61 +1,56 @@
+"""
+modul-modul untuk query database
+"""
+import asyncio
+import os
 from functools import cache
-from typing import Any
+from sqlalchemy import select
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 
 from .models import (
-    Base,
     Likelihood,
     Prior,
     StopWords,
     Training,
-    engine,
-    session,
 )
 
+BASE_DIR = os.path.dirname(os.path.realpath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "dataset.db")
+DB_URL = f"sqlite+aiosqlite:///{DB_PATH}?check_same_thread=False"
+engine = create_async_engine(DB_URL)
+session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
-def create_db() -> None:
-    """Create Database dataset.db"""
-    Base.metadata.create_all(engine)
 
-
-def insert_training(txt: str, lbl: int) -> None:
-    """Insert text and label into training table"""
-    local_session = session(bind=engine)
-    new_training = Training(text=txt, label=lbl)
-    local_session.add(new_training)
-    local_session.commit()
+async def read_db(object):
+    async with engine.connect() as conn:
+        return await conn.execute(select(object))
 
 
 @cache
 def read_stop_words() -> set:
     """Read all stop words"""
-    local_session = session(bind=engine)
-    stops = local_session.query(StopWords).all()
-
+    stops = asyncio.run(read_db(StopWords))
     return {data.content for data in stops}
 
 
 @cache
 def read_all_training() -> dict:
     """Read all training dataset"""
-    local_session = session(bind=engine)
-    training = local_session.query(Training).all()
+    data = asyncio.run(read_db(Training))
+    return {d.id: {"text": d.text, "label": d.label} for d in data}
 
-    return {data.id: {"text": data.text, "label": data.label} for data in training}
+
+@cache
+def read_log_prior() -> float:
+    """get prior value"""
+    data = asyncio.run(read_db(Prior))
+    data = [d.logprior for d in data]
+    return data[0]
 
 
 @cache
 def read_log_likelihood() -> dict:
-    """Read all loglikelihoods. Returns dictionary."""
-    local_session = session(bind=engine)
-    loglikelihood = local_session.query(Likelihood).all()
-
-    return {data.text: data.loglikelihood for data in loglikelihood}
-
-
-@cache
-def read_log_prior() -> Any:
-    """Read all logprior. Returns dictionary."""
-    local_session = session(bind=engine)
-    prior = local_session.query(Prior).order_by(Prior.id.desc()).first()
-
-    return prior.logprior # type: ignore
+    """list all log likelihoods"""
+    data = asyncio.run(read_db(Likelihood))
+    return {d.text: d.loglikelihood for d in data}
