@@ -21,9 +21,11 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Config poetry
         env:
-          username: echo '__token__'
-          password: echo ${{ secrets.PYPI_API_TOKEN }}
-        run: poetry config http-basic.pypi $username $password
+          username: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+        run: poetry config pypi-token.pypi $password
+      - name: Install dependencies
+        run: poetry install
       - name: Format code
         run: poetry run black
       - name: Run tests
