@@ -18,3 +18,6 @@ pip install sensi
 - Contoh penerapan dapat dilihat pada directory 'apis' pada repository [flask-sk](https://github.com/GazDuckington/flask-sk)
 
 - Baca ```resources/predictor.py``` untuk berbagai contoh lainnya.
+
+## Lisensi
+[MIT](./LICENSE)
