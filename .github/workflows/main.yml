@@ -23,7 +23,7 @@ jobs:
         env:
           username: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
-        run: poetry config pypi-token.pypi $password
+        run: poetry config http-basic.pypi $username $password
       - name: Install dependencies
         run: poetry install
       - name: Format code
