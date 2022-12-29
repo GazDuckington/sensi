@@ -42,4 +42,3 @@ def freqs(txt: str) -> List[tuple]:
     Output: tuple
     """
     return nltk.FreqDist(txt).most_common()
-

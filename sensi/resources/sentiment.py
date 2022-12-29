@@ -19,12 +19,13 @@ def kamus_freq(teks: List[str], label: List[int]) -> dict:
     result = {}
     for y, t in zip(label, teks):
         for word in normalisasi(t):
-            pair = (word,y)
+            pair = (word, y)
             if pair in result:
                 result[pair] += 1
             else:
                 result[pair] = 1
     return result
+
 
 # ** hitung likelihood
 def hitung_likelihood(freqs: dict) -> dict:
@@ -53,6 +54,7 @@ def hitung_likelihood(freqs: dict) -> dict:
         loglikelihood[word] = np.log(pw_pos / pw_neg)
     return loglikelihood
 
+
 # ** hitung prior
 def hitung_prior(freqs: dict, train_y) -> float:
     """melatih naive-bayes classifier
@@ -68,7 +70,7 @@ def hitung_prior(freqs: dict, train_y) -> float:
         if pair[1] > 0:
             N_pos += freqs[(pair)]
         else:
-            N_neg += freqs[(pair)]    
+            N_neg += freqs[(pair)]
 
         # jumlah document
         D = train_y.shape[0]
@@ -80,6 +82,8 @@ def hitung_prior(freqs: dict, train_y) -> float:
         # kemungkinan nilai sentimen suatu kata
         logprior = np.log(D_pos) - np.log(D_neg)
     return logprior
+
+
 # ** end of NBC training
 
 # ** prediktor
@@ -101,8 +105,11 @@ def predict_nbc(text: str, logprior: float, loglikelihood: dict) -> float:
             p += loglikelihood[word]
     return p
 
+
 # ** test nbc
-def uji_akurasi(test_x: List[str], test_y: List[int], logprior: float, loglikelihood: dict) -> str:
+def uji_akurasi(
+    test_x: List[str], test_y: List[int], logprior: float, loglikelihood: dict
+) -> str:
     """menguji naivve-bayes classifier
     Input:
         test_x: list kata
@@ -122,10 +129,10 @@ def uji_akurasi(test_x: List[str], test_y: List[int], logprior: float, loglikeli
 
     # hitung jumlah skor prediksi yang sama dengan nilai pada dataset test
     # nilai error adalah jumlah prediksi yang keliru
-    arr = np.array([y_hats,test_y])
-    error =np.sum(np.diff(arr, axis=0))/len(test_y)
+    arr = np.array([y_hats, test_y])
+    error = np.sum(np.diff(arr, axis=0)) / len(test_y)
 
     # akurasi 1 - error (percentile)
-    accuracy = 1-error
+    accuracy = 1 - error
 
     return format(accuracy, ".2%")

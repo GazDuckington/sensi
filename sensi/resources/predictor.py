@@ -9,6 +9,7 @@ loglikelihood = read_log_likelihood()
 
 tr = 0
 
+
 def prediksi_nbc(text: str) -> float:
     x = predict_nbc(text, logprior, loglikelihood)
     return round(x, 4)
@@ -42,11 +43,11 @@ def per_kalimat(text: str) -> list:
 
 def per_kata(text: str) -> list:
     temp_norm = normalisasi(text)
-    frekwensi = freqs(temp_norm)    # type: ignore
+    frekwensi = freqs(temp_norm)  # type: ignore
 
     kata = []
     dicti = {}
-    kamus_freq = tup_to_dict(frekwensi, dicti)   # type: ignore
+    kamus_freq = tup_to_dict(frekwensi, dicti)  # type: ignore
 
     for _, y in kamus_freq.items():
         sk = predict_nbc(y["text"], logprior, loglikelihood)
@@ -61,4 +62,4 @@ def per_kata(text: str) -> list:
             }
         )
 
-    return kata 
+    return kata
