@@ -4,6 +4,7 @@ modul-modul untuk query database
 import asyncio
 import os
 from functools import cache
+from typing import Any
 from sqlalchemy import select
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
@@ -22,7 +23,7 @@ engine = create_async_engine(DB_URL)
 session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 
-async def read_db(object):
+async def read_db(object)-> Any:
     async with engine.connect() as conn:
         return await conn.execute(select(object))
 
