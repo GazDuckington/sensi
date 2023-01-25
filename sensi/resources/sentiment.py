@@ -2,7 +2,7 @@ from typing import List
 
 import numpy as np
 
-from .processing import normalisasi
+from sensi.resources.processing import normalisasi
 
 
 # ** NBC training, pada peng-apliksaian gunakan database query

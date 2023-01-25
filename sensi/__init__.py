@@ -1,11 +1,11 @@
 # prediktor
-from .resources.predictor import prediksi_nbc, per_kata, per_kalimat
+from sensi.resources.predictor import prediksi_nbc, per_kata, per_kalimat
 
 # pre-processor
-from .resources.processing import rem_stop, normalisasi, freqs
+from sensi.resources.processing import rem_stop, normalisasi, freqs
 
 # query database
-from .database.query import (
+from sensi.database.query import (
     read_stop_words,
     read_all_training,
     read_log_likelihood,
@@ -13,7 +13,7 @@ from .database.query import (
 )
 
 # manual training
-from .resources.sentiment import (
+from sensi.resources.sentiment import (
     kamus_freq,
     hitung_prior,
     hitung_likelihood,

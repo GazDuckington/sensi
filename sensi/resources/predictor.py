@@ -1,8 +1,8 @@
 from nltk.tokenize import sent_tokenize
 
-from ..database.query import read_log_likelihood, read_log_prior
-from .processing import freqs, normalisasi
-from .sentiment import predict_nbc
+from sensi.database.query import read_log_likelihood, read_log_prior
+from sensi.resources.processing import freqs, normalisasi
+from sensi.resources.sentiment import predict_nbc
 
 logprior = read_log_prior()
 loglikelihood = read_log_likelihood()

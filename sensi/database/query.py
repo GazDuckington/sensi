@@ -9,7 +9,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 
-from .models import (
+from sensi.database.models import (
     Likelihood,
     Prior,
     StopWords,
@@ -33,7 +33,6 @@ def read_stop_words() -> set:
     """Read all stop words"""
     stops = asyncio.run(read_db(StopWords))
     return {data.content for data in stops}
-
 
 @cache
 def read_all_training() -> dict:

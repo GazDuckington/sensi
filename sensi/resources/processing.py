@@ -6,7 +6,7 @@ from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 import nltk
 from nltk.tokenize import word_tokenize
 
-from ..database.query import read_stop_words
+from sensi.database.query import read_stop_words
 
 pwd = os.path.dirname(os.path.realpath(__file__))
 nltk_path = f"{pwd}/nltk_data"
