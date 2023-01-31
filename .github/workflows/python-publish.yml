@@ -9,12 +9,12 @@
 name: Upload Python Package
 
 on:
-  push:
+  workflow_run:
     branches: 
       - main
     tags:
       - '*'
-    
+ 
 permissions:
   contents: read
 
