@@ -23,7 +23,7 @@ engine = create_async_engine(DB_URL)
 session = sessionmaker(engine, expire_on_commit=False, class_=AsyncSession)
 
 
-async def read_db(object)-> Any:
+async def read_db(object) -> Any:
     async with engine.connect() as conn:
         return await conn.execute(select(object))
 
@@ -33,6 +33,7 @@ def read_stop_words() -> set:
     """Read all stop words"""
     stops = asyncio.run(read_db(StopWords))
     return {data.content for data in stops}
+
 
 @cache
 def read_all_training() -> dict:
