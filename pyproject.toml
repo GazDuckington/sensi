@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sensi"
-version = "1.0.4"
+version = "1.0.5"
 description = "Naive-Bayes based sentiment analysis library for the Indonesian Language."
 authors = ["GazDuckington <dianghazy@protonmail.com>"]
 readme = "README.md"
@@ -8,7 +8,7 @@ license = "MIT"
 homepage = "https://github.com/GazDuckington/sensi"
 repository = "https://github.com/GazDuckington/sensi"
 packages = [{ include = "sensi" }]
-keywords=['NLP', 'Bahasa', 'Indonesia', 'Sentimen', 'Analisis'],
+keywords=['NLP', 'Bahasa', 'Indonesia', 'Sentimen', 'Analisis']
 classifiers = [
 	'Intended Audience :: Developers',
 	'Intended Audience :: Information Technology',
