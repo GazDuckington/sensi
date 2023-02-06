@@ -10,7 +10,7 @@
 ## Dependensi
 
 ```python
-sastrawi nltk numpy pandas sqlalchemy
+bahasa nltk numpy pandas sqlalchemy
 ```
 
 ## Instalasai
