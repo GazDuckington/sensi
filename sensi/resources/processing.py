@@ -2,7 +2,7 @@ import os
 import re
 from typing import List
 
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from bahasa.stemmer import Stemmer
 import nltk
 from nltk.tokenize import word_tokenize
 
@@ -22,8 +22,7 @@ def rem_stop(txt) -> list:
 def normalisasi(txt: str) -> List[str]:
     """Text normalization or Pre-processing"""
     # * stemming
-    factory = StemmerFactory()
-    stemmer = factory.create_stemmer()
+    stemmer = Stemmer()
     txt = stemmer.stem(txt)
     # * remove urls
     txt = re.sub(r"http\S+", " ", txt)

@@ -12,11 +12,11 @@ packages = [{ include = "sensi" }]
 [tool.poetry.dependencies]
 python = "^3.11"
 nltk = "^3.8"
-Sastrawi = "^1.0.1"
 numpy = "^1.24.1"
 pandas = "^1.5.2"
 SQLAlchemy = { extras = ["asyncio"], version = "^1.4.45" }
 aiosqlite = "^0.18.0"
+bahasa = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
