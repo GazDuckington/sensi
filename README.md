@@ -26,6 +26,10 @@ pip install sensi
 
 - Baca `resources/predictor.py` untuk berbagai contoh lainnya.
 
+## _Credits_
+
+[@kangfend](https://github.com/kangfend) untuk modul [bahasa](https://github.com/kangfend/bahasa)-nya.
+
 ## Lisensi
 
 [MIT](./LICENSE)
