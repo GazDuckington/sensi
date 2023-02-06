@@ -28,7 +28,7 @@ pip install sensi
 
 ## _Credits_
 
-[@kangfend](https://github.com/kangfend) untuk modul [bahasa](https://github.com/kangfend/bahasa)-nya.
+- [bahasa](https://github.com/kangfend/bahasa) oleh [@kangfend](https://github.com/kangfend).
 
 ## Lisensi
 
