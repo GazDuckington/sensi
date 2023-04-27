@@ -10,7 +10,7 @@ joblib==1.2.0
 mypy-extensions==1.0.0
 nltk==3.8.1
 numpy==1.24.1
-packaging==23.0
+packaging==23.1
 pandas==2.0.0
 pathspec==0.11.1
 platformdirs==3.2.0
