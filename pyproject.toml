@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sensi"
-version = "1.0.8"
+version = "1.0.9"
 description = "Naive-Bayes based sentiment analysis library for the Indonesian Language."
 authors = ["GazDuckington <dianghazy@protonmail.com>"]
 readme = "README.md"
