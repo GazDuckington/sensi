@@ -20,5 +20,5 @@ python-dateutil==2.8.2
 pytz==2023.3
 regex==2023.6.3
 six==1.10.0
-SQLAlchemy==2.0.15
+SQLAlchemy==2.0.20
 tqdm==4.65.0
