@@ -13,8 +13,8 @@ jobs:
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
-          github-token: "${{ secrets.GH_TOKEN }}"
+          github-token: "${{secrets.GH_TOKEN}}"
       - name: Enable auto-merge for Dependabot
         uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{secrets.GH_TOKEN}}
