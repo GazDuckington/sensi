@@ -1,5 +1,5 @@
 aiosqlite==0.19.0
-attrs==23.1.0
+attrs==23.2.0
 bahasa==1.0.1
 black==24.4.2
 click==8.1.7
